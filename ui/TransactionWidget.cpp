@@ -73,7 +73,7 @@ void TransactionWidget::setupUI() {
     
     // 中间：表格
     m_transactionView = new QTableView(this);
-    m_model = new TransactionModel(this);
+    m_model = new TransactionModel(m_user, this);
     m_proxyModel = new QSortFilterProxyModel(this);
     m_proxyModel->setSourceModel(m_model);
     m_proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
@@ -167,7 +167,17 @@ void TransactionWidget::onAddTransaction() {
             if (m_model) {
                 m_model->addRecord(record);
             }
+
+            // 如果是支出且有匹配的预算，更新预算已用金额
+            if (record->isExpense()) {
+                auto b = m_user->getBudget(record->getCategoryId());
+                if (b) {
+                    b->addExpense(record->getAmount());
+                }
+            }
+
             updateSummary();
+            emit recordsChanged();
         }
     }
 }
@@ -175,12 +185,41 @@ void TransactionWidget::onAddTransaction() {
 void TransactionWidget::onEditTransaction() {
     if (!m_selectedRecord) return;
 
+    // capture old values to adjust budgets after edit
+    Record::Type oldType = m_selectedRecord->getType();
+    double oldAmount = m_selectedRecord->getAmount();
+    QString oldCategory = m_selectedRecord->getCategoryId();
+
     AddTransactionDialog dlg(m_user, m_selectedRecord, this);
     if (dlg.exec() == QDialog::Accepted) {
         // record modified in-place
         if (m_model) {
             m_model->updateRecord(m_selectedRecord);
         }
+
+        // adjust budgets according to changes
+        Record::Type newType = m_selectedRecord->getType();
+        double newAmount = m_selectedRecord->getAmount();
+        QString newCategory = m_selectedRecord->getCategoryId();
+
+        // if old was expense, remove its effect
+        if (oldType == Record::Type::Expense) {
+            auto oldBudget = m_user->getBudget(oldCategory);
+            if (oldBudget) {
+                oldBudget->removeExpense(oldAmount);
+            }
+        }
+
+        // if new is expense, add its effect
+        if (newType == Record::Type::Expense) {
+            auto newBudget = m_user->getBudget(newCategory);
+            if (newBudget) {
+                newBudget->addExpense(newAmount);
+            }
+        }
+
+        updateSummary();
+        emit recordsChanged();
     }
 }
 
@@ -188,7 +227,16 @@ void TransactionWidget::onDeleteTransaction() {
     if (!m_selectedRecord) return;
 
     QString id = m_selectedRecord->getId();
-    // 从用户中移除
+
+    // 如果是支出且有匹配的预算，减少预算已用金额
+    if (m_selectedRecord->isExpense()) {
+        auto b = m_user->getBudget(m_selectedRecord->getCategoryId());
+        if (b) {
+            b->removeExpense(m_selectedRecord->getAmount());
+        }
+    }
+
+    // 从用户中移除（标记为删除）
     m_user->removeRecord(id);
     // 从模型中移除
     if (m_model) m_model->removeRecord(id);
@@ -196,6 +244,9 @@ void TransactionWidget::onDeleteTransaction() {
     m_selectedRecord = nullptr;
     m_editButton->setEnabled(false);
     m_deleteButton->setEnabled(false);
+
+    updateSummary();
+    emit recordsChanged();
 }
 
 void TransactionWidget::onExportTransactions() {
@@ -224,12 +275,11 @@ void TransactionWidget::onTransactionSelected(const QModelIndex& index) {
 void TransactionWidget::onCategoryFilterChanged(int index) {
 }
 
-void TransactionWidget::updateSummary() {
-}
 
 // TransactionModel 实现
-TransactionModel::TransactionModel(QObject *parent)
+TransactionModel::TransactionModel(std::shared_ptr<User> user, QObject *parent)
     : QAbstractTableModel(parent)
+    , m_user(user)
 {
 }
 
@@ -255,8 +305,13 @@ QVariant TransactionModel::data(const QModelIndex &index, int role) const {
             return record ? record->getDateTime().toString("yyyy-MM-dd hh:mm") : "";
         case TypeColumn:
             return record ? (record->isIncome() ? "收入" : "支出") : "";
-        case CategoryColumn:
-            return ""; // 需要实现
+        case CategoryColumn: {
+            if (!record) return QString();
+            QString cid = record->getCategoryId();
+            if (!m_user) return cid;
+            auto c = m_user->getCategory(cid);
+            return c ? c->getName() : cid;
+        }
         case AmountColumn:
             return record ? QString::number(record->getAmount(), 'f', 2) : "";
         case NoteColumn:
@@ -264,6 +319,30 @@ QVariant TransactionModel::data(const QModelIndex &index, int role) const {
         default:
             return QVariant();
     }
+}
+
+void TransactionWidget::updateSummary() {
+    double totalIncome = 0.0;
+    double totalExpense = 0.0;
+    int count = 0;
+
+    if (m_model) {
+        int rows = m_model->rowCount();
+        for (int i = 0; i < rows; ++i) {
+            auto r = m_model->getRecord(i);
+            if (!r) continue;
+            ++count;
+            if (r->isIncome()) totalIncome += r->getAmount();
+            if (r->isExpense()) totalExpense += r->getAmount();
+        }
+    }
+
+    double balance = totalIncome - totalExpense;
+
+    if (m_totalIncomeLabel) m_totalIncomeLabel->setText(QString("收入: ¥%1").arg(totalIncome, 0, 'f', 2));
+    if (m_totalExpenseLabel) m_totalExpenseLabel->setText(QString("支出: ¥%1").arg(totalExpense, 0, 'f', 2));
+    if (m_balanceLabel) m_balanceLabel->setText(QString("余额: ¥%1").arg(balance, 0, 'f', 2));
+    if (m_transactionCountLabel) m_transactionCountLabel->setText(QString("交易数: %1").arg(count));
 }
 
 QVariant TransactionModel::headerData(int section, Qt::Orientation orientation, int role) const {
@@ -373,6 +452,14 @@ AddTransactionDialog::AddTransactionDialog(std::shared_ptr<User> user, std::shar
         }
     }
 
+    // 创建金额与备注控件（在可能使用它们以填充初始值之前创建）
+    m_amountSpin = new QDoubleSpinBox(this);
+    m_amountSpin->setMinimum(0.01);
+    m_amountSpin->setMaximum(1e9);
+    m_amountSpin->setDecimals(2);
+
+    m_noteEdit = new QLineEdit(this);
+
     // 如果是编辑已有记录，填充初始值
     if (m_record) {
         QDateTime dt = m_record->getDateTime();
@@ -385,13 +472,6 @@ AddTransactionDialog::AddTransactionDialog(std::shared_ptr<User> user, std::shar
         m_amountSpin->setValue(m_record->getAmount());
         m_noteEdit->setText(m_record->getNote());
     }
-
-    m_amountSpin = new QDoubleSpinBox(this);
-    m_amountSpin->setMinimum(0.01);
-    m_amountSpin->setMaximum(1e9);
-    m_amountSpin->setDecimals(2);
-
-    m_noteEdit = new QLineEdit(this);
 
     form->addRow("日期:", m_dateEdit);
     form->addRow("时间:", m_timeEdit);

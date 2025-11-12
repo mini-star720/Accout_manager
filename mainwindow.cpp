@@ -130,6 +130,16 @@ void MainWindow::initializeServices() {
             this, &MainWindow::onBudgetOver);
     connect(m_reminderService.get(), &ReminderService::unreadCountChanged, 
             this, &MainWindow::onUnreadRemindersChanged);
+
+    // 如果交易或预算发生变化，立即检查预算状态
+    if (m_transactionWidget) {
+    connect(m_transactionWidget, &TransactionWidget::recordsChanged,
+        m_reminderService.get(), &ReminderService::checkBudgetStatus);
+    }
+    if (m_budgetWidget) {
+    connect(m_budgetWidget, &BudgetWidget::budgetWarning, this, &MainWindow::onBudgetWarning);
+    connect(m_budgetWidget, &BudgetWidget::budgetOver, this, &MainWindow::onBudgetOver);
+    }
     
     // 创建数据存储服务
     m_dataService = std::make_shared<DataStorageService>();

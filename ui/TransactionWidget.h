@@ -79,6 +79,9 @@ private slots:
     void onCategoryFilterChanged(int index);
     void updateSummary();
 
+signals:
+    void recordsChanged();
+
 private:
     void setupUI();
     void createLayout();
@@ -122,7 +125,7 @@ class TransactionModel : public QAbstractTableModel {
     Q_OBJECT
 
 public:
-    explicit TransactionModel(QObject *parent = nullptr);
+    explicit TransactionModel(std::shared_ptr<User> user, QObject *parent = nullptr);
     
     // 重载的虚函数
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -152,6 +155,7 @@ public:
 
 private:
     QVector<std::shared_ptr<Record>> m_records;
+    std::shared_ptr<User> m_user;
 };
 
 #endif // TRANSACTIONWIDGET_H

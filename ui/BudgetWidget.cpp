@@ -144,6 +144,8 @@ void BudgetWidget::loadBudgets() {
     if (!m_user) return;
     auto budgets = m_user->getAllBudgets();
     m_model->setBudgets(budgets);
+    updateBudgetProgress();
+    checkBudgetAlerts();
 }
 
 void BudgetWidget::onAddBudget() {
@@ -184,6 +186,8 @@ void BudgetWidget::onAddBudget() {
 
     // refresh display
     loadBudgets();
+    updateBudgetProgress();
+    checkBudgetAlerts();
 }
 
 void BudgetWidget::onEditBudget() {
@@ -222,6 +226,8 @@ void BudgetWidget::onDeleteBudget() {
     m_model->removeBudget(b->getId());
     m_selectedBudget = nullptr;
     loadBudgets();
+    updateBudgetProgress();
+    checkBudgetAlerts();
 }
 
 void BudgetWidget::onBudgetSelected(const QModelIndex& index) {
@@ -246,9 +252,48 @@ void BudgetWidget::onCategorySelected(const QString& categoryId) {
 }
 
 void BudgetWidget::updateBudgetProgress() {
+    if (!m_user) return;
+
+    // If a budget is selected, show its detailed progress
+    if (m_selectedBudget) {
+        double used = m_selectedBudget->getUsedAmount();
+        double total = m_selectedBudget->getTotalAmount();
+        double remaining = total - used;
+        double percent = m_selectedBudget->getUsagePercentage() * 100.0;
+
+        m_progressBar->setValue(static_cast<int>(percent));
+        m_usedAmountLabel->setText(QString("已使用: ¥%1").arg(used, 0, 'f', 2));
+        m_totalAmountLabel->setText(QString("总预算: ¥%1").arg(total, 0, 'f', 2));
+        m_remainingAmountLabel->setText(QString("剩余: ¥%1").arg(remaining, 0, 'f', 2));
+        m_usagePercentageLabel->setText(QString("使用比例: %1%").arg(static_cast<int>(percent)));
+    } else {
+        // otherwise clear / aggregate 0
+        m_progressBar->setValue(0);
+        m_usedAmountLabel->setText("已使用: ¥0.00");
+        m_totalAmountLabel->setText("总预算: ¥0.00");
+        m_remainingAmountLabel->setText("剩余: ¥0.00");
+        m_usagePercentageLabel->setText("使用比例: 0%");
+    }
+
 }
 
 void BudgetWidget::checkBudgetAlerts() {
+    if (!m_user) return;
+
+    auto budgets = m_user->getAllBudgets();
+    for (const auto& b : budgets) {
+        if (!b) continue;
+        b->checkAndUpdateStatus();
+        if (b->isOverBudget()) {
+            auto c = m_user->getCategory(b->getCategoryId());
+            QString name = c ? c->getName() : "未知分类";
+            emit budgetOver(name, b->getUsedAmount() - b->getTotalAmount());
+        } else if (b->isInWarning()) {
+            auto c = m_user->getCategory(b->getCategoryId());
+            QString name = c ? c->getName() : "未知分类";
+            emit budgetWarning(name, b->getUsagePercentage());
+        }
+    }
 }
 
 // BudgetModel 实现
