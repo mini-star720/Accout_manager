@@ -78,6 +78,10 @@ void TransactionWidget::setupUI() {
     m_proxyModel->setSourceModel(m_model);
     m_proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     m_transactionView->setModel(m_proxyModel);
+    // 初始化时把用户的现有记录加载到模型
+    if (m_user && m_model) {
+        m_model->setRecords(m_user->getAllRecords());
+    }
     
     // 右侧：统计信息
     QVBoxLayout* statsLayout = new QVBoxLayout();
@@ -143,6 +147,10 @@ void TransactionWidget::showContextMenu(const QPoint& pos) {
 }
 
 void TransactionWidget::refreshData() {
+    // reload records from user (could be filtered by date range)
+    if (m_model && m_user) {
+        m_model->setRecords(m_user->getAllRecords());
+    }
     updateSummary();
 }
 

@@ -34,6 +34,7 @@ public slots:
 
 private slots:
     void onAddBudget();
+    void onNewBudget();
     void onEditBudget();
     void onDeleteBudget();
     void onBudgetSelected(const QModelIndex& index);

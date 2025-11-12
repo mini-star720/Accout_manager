@@ -109,7 +109,7 @@ void BudgetWidget::createLayout() {
 }
 
 void BudgetWidget::createConnections() {
-    connect(m_addButton, &QPushButton::clicked, this, &BudgetWidget::onAddBudget);
+    connect(m_addButton, &QPushButton::clicked, this, &BudgetWidget::onNewBudget);
     connect(m_editButton, &QPushButton::clicked, this, &BudgetWidget::onEditBudget);
     connect(m_deleteButton, &QPushButton::clicked, this, &BudgetWidget::onDeleteBudget);
     connect(m_budgetView, &QTableView::clicked, this, &BudgetWidget::onBudgetSelected);
@@ -128,6 +128,16 @@ void BudgetWidget::loadCategories() {
     for (const auto& c : cats) {
         m_categoryCombo->addItem(c->getName(), c->getId());
     }
+}
+
+void BudgetWidget::onNewBudget() {
+    // prepare the right-side inputs for a new budget
+    m_selectedBudget = nullptr;
+    if (m_categoryCombo->count() > 0) m_categoryCombo->setCurrentIndex(0);
+    m_amountSpinBox->setValue(0.0);
+    m_alertSlider->setValue(80);
+    if (m_periodCombo->count() > 0) m_periodCombo->setCurrentIndex(0);
+    updateBudgetProgress();
 }
 
 void BudgetWidget::updateBudgetDisplay() {

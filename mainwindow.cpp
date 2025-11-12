@@ -135,6 +135,11 @@ void MainWindow::initializeServices() {
     if (m_transactionWidget) {
     connect(m_transactionWidget, &TransactionWidget::recordsChanged,
         m_reminderService.get(), &ReminderService::checkBudgetStatus);
+    // also update balance display and refresh budget view when transactions change
+    connect(m_transactionWidget, &TransactionWidget::recordsChanged,
+        this, &MainWindow::updateBalanceDisplay);
+    connect(m_transactionWidget, &TransactionWidget::recordsChanged,
+        m_budgetWidget, &BudgetWidget::refreshData);
     }
     if (m_budgetWidget) {
     connect(m_budgetWidget, &BudgetWidget::budgetWarning, this, &MainWindow::onBudgetWarning);
