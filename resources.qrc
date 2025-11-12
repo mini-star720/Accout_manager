@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/transaction.png</file>
+        <file>icons/statistics.png</file>
+        <file>icons/budget.png</file>
+        <file>icons/settings.png</file>
+    </qresource>
+</RCC>

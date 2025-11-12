@@ -1,0 +1,92 @@
+[
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/mocs_compilation.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/main.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/main.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/main.cpp",
+  "output": "CMakeFiles/untitled.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/mainwindow.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/mainwindow.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/mainwindow.cpp",
+  "output": "CMakeFiles/untitled.dir/mainwindow.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/models/User.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/models/User.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/models/User.cpp",
+  "output": "CMakeFiles/untitled.dir/models/User.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/models/Category.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/models/Category.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/models/Category.cpp",
+  "output": "CMakeFiles/untitled.dir/models/Category.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/models/Record.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/models/Record.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/models/Record.cpp",
+  "output": "CMakeFiles/untitled.dir/models/Record.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/models/Budget.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/models/Budget.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/models/Budget.cpp",
+  "output": "CMakeFiles/untitled.dir/models/Budget.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/services/ReminderService.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/services/ReminderService.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/services/ReminderService.cpp",
+  "output": "CMakeFiles/untitled.dir/services/ReminderService.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/services/ReportService.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/services/ReportService.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/services/ReportService.cpp",
+  "output": "CMakeFiles/untitled.dir/services/ReportService.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/services/DataStorageService.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/services/DataStorageService.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/services/DataStorageService.cpp",
+  "output": "CMakeFiles/untitled.dir/services/DataStorageService.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/ui/TransactionWidget.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/ui/TransactionWidget.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/ui/TransactionWidget.cpp",
+  "output": "CMakeFiles/untitled.dir/ui/TransactionWidget.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/ui/StatisticsWidget.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/ui/StatisticsWidget.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/ui/StatisticsWidget.cpp",
+  "output": "CMakeFiles/untitled.dir/ui/StatisticsWidget.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/ui/BudgetWidget.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/ui/BudgetWidget.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/ui/BudgetWidget.cpp",
+  "output": "CMakeFiles/untitled.dir/ui/BudgetWidget.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/ui/SettingsWidget.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/ui/SettingsWidget.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/ui/SettingsWidget.cpp",
+  "output": "CMakeFiles/untitled.dir/ui/SettingsWidget.cpp.o"
+},
+{
+  "directory": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build",
+  "command": "/usr/bin/clang++ -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/Users/qianzr/Documents/software_engineering/实验三/untitled/build/untitled_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtCharts.framework/Headers -isystem /opt/homebrew/lib/QtOpenGL.framework/Headers -isystem /opt/homebrew/lib/QtOpenGLWidgets.framework/Headers -g -std=gnu++17 -arch arm64 -o CMakeFiles/untitled.dir/build/.qt/rcc/qrc_untitled_translations.cpp.o -c /Users/qianzr/Documents/software_engineering/实验三/untitled/build/.qt/rcc/qrc_untitled_translations.cpp",
+  "file": "/Users/qianzr/Documents/software_engineering/实验三/untitled/build/.qt/rcc/qrc_untitled_translations.cpp",
+  "output": "CMakeFiles/untitled.dir/build/.qt/rcc/qrc_untitled_translations.cpp.o"
+}
+]

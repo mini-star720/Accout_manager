@@ -1,0 +1,13 @@
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/untitled.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/untitled_lupdate.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/update_translations.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/untitled_lrelease.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/release_translations.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/edit_cache.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/rebuild_cache.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/list_install_components.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/install.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/install/local.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/install/strip.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/untitled_autogen_timestamp_deps.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/build/CMakeFiles/untitled_autogen.dir
