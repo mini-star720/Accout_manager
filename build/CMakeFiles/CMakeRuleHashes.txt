@@ -1,8 +1,0 @@
-# Hashes of file build rules.
-174008b65421ddee53a050bb9ee4dcda .qt/rcc/qrc_untitled_translations.cpp
-c7f56c17a98700c23a795a3e642fdeb3 CMakeFiles/untitled_autogen
-c7f56c17a98700c23a795a3e642fdeb3 CMakeFiles/untitled_lrelease
-528add1790c83b19ad585c8586717236 CMakeFiles/untitled_lupdate
-72d7473139eaadc8b95e4fb4ab9aaffa tests_autogen/timestamp
-32aebedb160119a51d9322be5ce2fe1f untitled_autogen/timestamp
-b34d5e615360966c367a051b91b6515f untitled_zh_CN.qm
