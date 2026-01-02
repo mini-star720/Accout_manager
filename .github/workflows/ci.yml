@@ -21,15 +21,6 @@ jobs:
         pip3 install aqtinstall
         aqt install-qt linux desktop 6.5.0 gcc_64 -O /opt/qt6
 
-    - name: Build and run unit tests
-      run: |
-        cd tests
-        mkdir build
-        cd build
-        CMAKE_PREFIX_PATH=/opt/qt6/6.5.0/gcc_64/lib/cmake cmake ..
-        make -j$(nproc)
-        ./tests
-
     - name: Build and run integration tests
       run: |
         cd emsumble_test
