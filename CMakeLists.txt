@@ -3,6 +3,9 @@ project(untitled LANGUAGES CXX)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools Charts)
 
+# Find GTest
+find_package(GTest REQUIRED)
+
 qt_standard_project_setup()
 
 qt_add_executable(untitled
