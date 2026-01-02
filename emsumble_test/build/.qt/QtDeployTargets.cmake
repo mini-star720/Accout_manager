@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_emsumble_test_FILE /Users/qianzr/Documents/software_engineering/实验三/untitled/emsumble_test/build/emsumble_test)
+set(__QT_DEPLOY_TARGET_emsumble_test_TYPE EXECUTABLE)

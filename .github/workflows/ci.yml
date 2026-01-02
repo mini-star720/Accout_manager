@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake qt6-base-dev libgtest-dev
+
+    - name: Build main project
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make -j$(nproc)
+
+    - name: Build and run unit tests
+      run: |
+        cd tests
+        mkdir build
+        cd build
+        cmake ..
+        make -j$(nproc)
+        ./tests
+
+    - name: Build and run integration tests
+      run: |
+        cd emsumble_test
+        mkdir build
+        cd build
+        cmake ..
+        make -j$(nproc)
+        ./emsumble_test

@@ -1,0 +1,5 @@
+/Users/qianzr/Documents/software_engineering/实验三/untitled/emsumble_test/build/CMakeFiles/emsumble_test.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/emsumble_test/build/CMakeFiles/edit_cache.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/emsumble_test/build/CMakeFiles/rebuild_cache.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/emsumble_test/build/CMakeFiles/emsumble_test_autogen_timestamp_deps.dir
+/Users/qianzr/Documents/software_engineering/实验三/untitled/emsumble_test/build/CMakeFiles/emsumble_test_autogen.dir
