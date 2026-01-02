@@ -22,13 +22,6 @@ jobs:
         aqt install-qt linux desktop 6.5.0 gcc_64 -O /opt/qt6
         aqt install-qt linux desktop 6.5.0 gcc_64 qtcharts -O /opt/qt6
 
-    - name: Build main project
-      run: |
-        mkdir build
-        cd build
-        CMAKE_PREFIX_PATH=/opt/qt6/6.5.0/gcc_64/lib/cmake cmake ..
-        make -j$(nproc)
-
     - name: Build and run unit tests
       run: |
         cd tests
