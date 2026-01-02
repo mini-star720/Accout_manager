@@ -17,13 +17,15 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y build-essential cmake qt6-base-dev libgtest-dev
+        sudo apt-get install -y build-essential cmake libgtest-dev python3-pip
+        pip3 install aqtinstall
+        aqt install-qt linux desktop 6.5.0 gcc_64 -O /opt/qt6
 
     - name: Build main project
       run: |
         mkdir build
         cd build
-        cmake ..
+        CMAKE_PREFIX_PATH=/opt/qt6/6.5.0/gcc_64/lib/cmake cmake ..
         make -j$(nproc)
 
     - name: Build and run unit tests
@@ -31,7 +33,7 @@ jobs:
         cd tests
         mkdir build
         cd build
-        cmake ..
+        CMAKE_PREFIX_PATH=/opt/qt6/6.5.0/gcc_64/lib/cmake cmake ..
         make -j$(nproc)
         ./tests
 
@@ -40,6 +42,6 @@ jobs:
         cd emsumble_test
         mkdir build
         cd build
-        cmake ..
+        CMAKE_PREFIX_PATH=/opt/qt6/6.5.0/gcc_64/lib/cmake cmake ..
         make -j$(nproc)
         ./emsumble_test
